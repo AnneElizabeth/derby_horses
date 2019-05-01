@@ -1,6 +1,8 @@
-require "derby_horses/version"
+#environment file
 
-module DerbyHorses
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require "pry"
+require "nokogiri"
+require "open-uri"
+
+require_relative "derby_horses/version"
+require_relative "derby_horses/cli"
