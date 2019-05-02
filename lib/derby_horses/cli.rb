@@ -29,9 +29,19 @@ class DerbyHorses::CLI
     puts "Anothertwistafate"
     puts "Sueno"
     puts "Bourbon War"
-    puts "git@github.com:AnneElizabeth/derby_horses.git"
+    puts ""
     puts "Type in the name of a horse you would like to know more about."
     input = gets.strip.downcase
+    case input
+      when "war of will"
+        puts "War of Will is a horse."
+      when "tax"
+        puts "Tax is a horse."
+      when "by my standards"
+        puts "By My Standards is a horse."
+      else
+        puts "Oops! Invalid input. Please try again."
+      end
   end
 
 end
