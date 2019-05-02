@@ -1,0 +1,2 @@
+class DerbyHorses::Scraper
+end

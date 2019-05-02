@@ -1,7 +1,7 @@
-class DerbyHorses::CLI 
-  
-  def start 
+class DerbyHorses::CLI
+
+  def start
     puts "Hello World"
   end
-  
+
 end

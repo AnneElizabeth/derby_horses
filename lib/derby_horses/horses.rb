@@ -1,0 +1,3 @@
+class DerbyHorses::Horses
+
+end
