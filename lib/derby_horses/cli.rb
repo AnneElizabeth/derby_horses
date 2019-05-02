@@ -36,7 +36,8 @@ class DerbyHorses::CLI
       when "1"
         puts "Will at War is a horse."
         horse_url = "https://www.kentuckyderby.com/horses/war-of-will"
-        DerbyHorses::Scraper.scrape_horse_info(horse_url)
+        horse_info = DerbyHorses::Scraper.scrape_horse_info(horse_url)
+        puts horse_info
       when "2"
         puts "Tax is a horse."
       when "3"

@@ -1,5 +1,3 @@
-
-
 class DerbyHorses::Scraper
 
   def self.scrape_horse_info(horse_url)
@@ -8,10 +6,10 @@ class DerbyHorses::Scraper
     web_page.css("div.trainer-cell a").text
     web_page.css("div.breeder-cell").text
     #breeder.css("div.text-style-insight-label").text
-    web_page.css("div.inset-cell p")[0].text
-    web_page.css("div.inset-cell p")[1].text
-    web_page.css("div.inset-cell p")[2].text
-    binding.pry
+    array_of_p = web_page.css("div.inset-cell p")[0..2].text
+    array_of_p.map do |horse_profile|
+      DerbyHorses::Profile.new(horse_profile)
+    end
 
   end
 
