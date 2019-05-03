@@ -12,6 +12,9 @@ class DerbyHorses::CLI
 
   def list_horses
     @horses = DerbyHorses::Horses.current
+    @horses.each.with_index(1) do |horse, i|
+      puts "#{i}. #{horse.name}"
+    end
   end
 
   def menu
@@ -20,11 +23,11 @@ class DerbyHorses::CLI
       puts "Enter the number of the horse you would like to know more about."
       puts "If you'd like to see the list of horses again, enter LIST."
       puts "Enter EXIT to exit the program."
-
       input = gets.strip.downcase
 
       if input.to_i > 0
-        puts @horses[input.to_i-1]
+        the_horse =  @horses[input.to_i-1]
+        puts "#{i}. #{horse.name}"
       elsif input == "list" || "LIST" || "List"
         list_horses
       else
