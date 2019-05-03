@@ -11,28 +11,25 @@ class DerbyHorses::CLI
   end
 
   def list_horses
-
     @horses = DerbyHorses::Horses.current
   end
 
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number of the horse you would like to know more about./nIf you'd like to see the list of horses again, enter LIST./nexEnter EXIT to exit the program."
+      puts "Enter the number of the horse you would like to know more about."
+      puts "If you'd like to see the list of horses again, enter LIST."
+      puts "Enter EXIT to exit the program."
+
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "horse owner, trainer, breeder, current odds, profile for Will at War"
-        horse_url = "https://www.kentuckyderby.com/horses/war-of-will"
-        horse_info = DerbyHorses::Scraper.scrape_horse_info(horse_url)
-      when "2"
-        puts "Tax is a horse."
-      when "3"
-        puts "By My Standards is a horse."
-      when "list" || "List" || "LIST"
+
+      if input.to_i > 0
+        puts @horses[input.to_i-1]
+      elsif input == "list" || "LIST" || "List"
         list_horses
       else
         puts "Whoops. That's an invalid entry. Please try again."
+      end
     end
   end
 

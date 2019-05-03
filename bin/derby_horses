@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/derby_horses.rb"
+require "bundler/setup"
+require "derby_horses"
 
 DerbyHorses::CLI.new.start

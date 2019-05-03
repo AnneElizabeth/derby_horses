@@ -1,11 +1,9 @@
 class DerbyHorses::Horses
+  attr_accessor :name, :owner, :trainer, :breeder, :sex, :color, :birthplace, :foaldate, :profile, :url
+
+
   def self.current
     #returns all instances of Horses
-
-    puts <<~DOC
-    1. War of Will
-    2. Tax
-    DOC
 
     horse_1 = self.new
     horse_1.name = "War of Will"
@@ -30,5 +28,7 @@ class DerbyHorses::Horses
     horse_2.foaldate = "April 17, 2016"
     horse_2.profile = "horse profile text"
     horse_2.url = "https://www.kentuckyderby.com/horses/war-of-will"
+
+    [horse_1, horse_2]
   end
 end
