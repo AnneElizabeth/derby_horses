@@ -10,7 +10,6 @@ class DerbyHorses::Horse
     @sex = sex
     @color = color
     @foaldate = foaldate
-    #@profile = profile
 
     @@all << self
   end
