@@ -3,19 +3,12 @@
 class DerbyHorses::CLI
 
   def start
-    puts "Hello Kentucky Derby fan!"
-    puts "The race horses competing in the 2019 Kentucky Derby are:"
-    list_horses
+    puts "Hello Kentucky Derby fan!The race horses competing in the 2019 Kentucky Derby are:"
+    Scraper.new.scrape_leaderboard
     menu
     goodbye
   end
 
-  def list_horses
-    @horses = DerbyHorses::Horses.current
-    @horses.each.with_index(1) do |horse, i|
-      puts "#{i}. #{horse.name}"
-    end
-  end
 
   def menu
     input = nil
